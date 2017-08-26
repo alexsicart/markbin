@@ -8,6 +8,13 @@ Meteor.methods({
       sharedWith: [],
       ownerId: this.userId
     });
+  },
+  'bins.remove': function(bin) {
+    return Bins.remove(bin);
+  },
+
+  'bins.update': function(bin, content) {
+    return Bins.update(bin._id, { $set: { content } });
   }
 });
 
